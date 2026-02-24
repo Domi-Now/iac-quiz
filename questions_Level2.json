@@ -1,0 +1,371 @@
+[
+  {
+    "topic": "iac",
+    "question": "What is the main difference between declarative and imperative IaC?",
+    "answers": [
+      "Declarative defines the desired state, imperative defines the steps",
+      "Imperative defines the desired state, declarative defines the steps",
+      "Both define only the steps",
+      "Both define only the desired state"
+    ],
+    "correct": 0,
+    "explanation": "Declarative IaC focuses on the final state, while imperative IaC specifies the exact steps to reach it."
+  },
+  {
+    "topic": "iac",
+    "question": "What is configuration drift?",
+    "answers": [
+      "Differences between environments over time",
+      "A network outage",
+      "A failed deployment",
+      "A missing configuration file"
+    ],
+    "correct": 0,
+    "explanation": "Configuration drift occurs when environments change manually and no longer match the defined IaC configuration."
+  },
+  {
+    "topic": "iac",
+    "question": "Why is version control important for IaC?",
+    "answers": [
+      "It tracks changes and enables rollbacks",
+      "It speeds up hardware",
+      "It encrypts secrets automatically",
+      "It replaces documentation"
+    ],
+    "correct": 0,
+    "explanation": "Version control allows teams to track changes, collaborate, and revert to previous infrastructure definitions."
+  },
+
+  {
+    "topic": "git",
+    "question": "What does 'git pull' do?",
+    "answers": [
+      "Fetches and merges changes from a remote repository",
+      "Deletes a branch",
+      "Creates a new repository",
+      "Shows commit logs"
+    ],
+    "correct": 0,
+    "explanation": "'git pull' retrieves changes from the remote and merges them into the current branch."
+  },
+  {
+    "topic": "git",
+    "question": "What is a merge conflict?",
+    "answers": [
+      "When Git cannot automatically combine changes",
+      "When a repository is deleted",
+      "When a commit fails",
+      "When a branch is locked"
+    ],
+    "correct": 0,
+    "explanation": "Merge conflicts occur when two changes affect the same part of a file and Git cannot decide which version to keep."
+  },
+  {
+    "topic": "git",
+    "question": "What does 'git branch featureX' do?",
+    "answers": [
+      "Creates a new branch named featureX",
+      "Deletes the featureX branch",
+      "Switches to featureX",
+      "Pushes featureX to remote"
+    ],
+    "correct": 0,
+    "explanation": "The command creates a new branch, allowing isolated development."
+  },
+
+  {
+    "topic": "azuredevops",
+    "question": "What is a Service Connection in Azure DevOps?",
+    "answers": [
+      "A secure connection allowing pipelines to access external systems",
+      "A Git branch",
+      "A dashboard widget",
+      "A test suite"
+    ],
+    "correct": 0,
+    "explanation": "Service Connections store credentials so pipelines can deploy to Azure or other systems."
+  },
+  {
+    "topic": "azuredevops",
+    "question": "What is the purpose of Azure Artifacts?",
+    "answers": [
+      "Hosting packages like NuGet or npm",
+      "Running builds",
+      "Managing Git repositories",
+      "Tracking work items"
+    ],
+    "correct": 0,
+    "explanation": "Azure Artifacts provides package feeds for storing and sharing dependencies."
+  },
+  {
+    "topic": "azuredevops",
+    "question": "What is a pipeline agent?",
+    "answers": [
+      "A machine that executes pipeline tasks",
+      "A Git hook",
+      "A YAML validator",
+      "A monitoring tool"
+    ],
+    "correct": 0,
+    "explanation": "Agents run the actual build and deployment tasks defined in the pipeline."
+  },
+
+  {
+    "topic": "terraform",
+    "question": "What does 'terraform validate' do?",
+    "answers": [
+      "Checks whether the configuration is syntactically valid",
+      "Applies the configuration",
+      "Shows the execution plan",
+      "Deletes the state file"
+    ],
+    "correct": 0,
+    "explanation": "'terraform validate' ensures the configuration files are syntactically correct."
+  },
+  {
+    "topic": "terraform",
+    "question": "What is a Terraform variable used for?",
+    "answers": [
+      "Parameterizing configuration values",
+      "Storing logs",
+      "Managing state",
+      "Running tests"
+    ],
+    "correct": 0,
+    "explanation": "Variables allow you to reuse and customize Terraform configurations."
+  },
+  {
+    "topic": "terraform",
+    "question": "What is the purpose of 'terraform destroy'?",
+    "answers": [
+      "Removes all resources defined in the configuration",
+      "Creates new resources",
+      "Shows the plan",
+      "Initializes the backend"
+    ],
+    "correct": 0,
+    "explanation": "'terraform destroy' tears down all infrastructure managed by the configuration."
+  },
+
+  {
+    "topic": "ansible",
+    "question": "What is an Ansible role?",
+    "answers": [
+      "A structured way to organize playbook content",
+      "A virtual machine",
+      "A Git branch",
+      "A YAML validator"
+    ],
+    "correct": 0,
+    "explanation": "Roles group tasks, variables, templates, and handlers into reusable units."
+  },
+  {
+    "topic": "ansible",
+    "question": "What does 'ansible -m ping all' do?",
+    "answers": [
+      "Tests connectivity to all hosts",
+      "Starts all playbooks",
+      "Installs packages",
+      "Runs a shell command"
+    ],
+    "correct": 0,
+    "explanation": "The ping module checks whether Ansible can reach the managed hosts."
+  },
+  {
+    "topic": "ansible",
+    "question": "What is a handler in Ansible?",
+       "answers": [
+      "A task triggered by a notification",
+      "A variable file",
+      "A module",
+      "A template"
+    ],
+    "correct": 0,
+    "explanation": "Handlers run only when notified, often used for restarting services after changes."
+  },
+
+  {
+    "topic": "iac",
+    "question": "Why is idempotency important in IaC?",
+    "answers": [
+      "Running the same code repeatedly produces the same result",
+      "It speeds up deployments",
+      "It encrypts secrets",
+      "It creates backups"
+    ],
+    "correct": 0,
+    "explanation": "Idempotency ensures predictable and repeatable infrastructure deployments."
+  },
+  {
+    "topic": "iac",
+    "question": "Which statement describes immutable infrastructure?",
+    "answers": [
+      "Servers are replaced rather than modified",
+      "Servers are manually patched",
+      "Configurations drift over time",
+      "Infrastructure is updated in place"
+    ],
+    "correct": 0,
+    "explanation": "Immutable infrastructure replaces servers instead of modifying them, reducing drift."
+  },
+  {
+    "topic": "iac",
+    "question": "What is a common risk of manual configuration?",
+    "answers": [
+      "Human error",
+      "Faster deployments",
+      "Better documentation",
+      "Improved security"
+    ],
+    "correct": 0,
+    "explanation": "Manual changes often introduce inconsistencies and errors."
+  },
+
+  {
+    "topic": "git",
+    "question": "What does 'git checkout -b featureX' do?",
+    "answers": [
+      "Creates and switches to a new branch",
+      "Deletes a branch",
+      "Pushes changes",
+      "Shows logs"
+    ],
+    "correct": 0,
+    "explanation": "The command creates a new branch and checks it out in one step."
+  },
+  {
+    "topic": "git",
+    "question": "What does 'git push' do?",
+    "answers": [
+      "Uploads local commits to a remote repository",
+      "Downloads commits",
+      "Creates a new branch",
+      "Resets the repository"
+    ],
+    "correct": 0,
+    "explanation": "'git push' sends your local commits to the remote server."
+  },
+  {
+    "topic": "git",
+    "question": "What is a remote in Git?",
+    "answers": [
+      "A reference to a hosted repository",
+      "A local backup",
+      "A branch",
+      "A tag"
+    ],
+    "correct": 0,
+    "explanation": "A remote points to a repository stored on a server like GitHub or Azure DevOps."
+  },
+
+  {
+    "topic": "azuredevops",
+    "question": "What is a pipeline stage?",
+    "answers": [
+      "A logical phase in a pipeline such as build or deploy",
+      "A Git branch",
+      "A test suite",
+      "A variable group"
+    ],
+    "correct": 0,
+    "explanation": "Stages divide pipelines into phases like build, test, and deploy."
+  },
+  {
+    "topic": "azuredevops",
+    "question": "What is a variable group?",
+    "answers": [
+      "A reusable set of variables for pipelines",
+      "A Git branch",
+      "A dashboard",
+      "A test plan"
+    ],
+    "correct": 0,
+    "explanation": "Variable groups store shared values used across multiple pipelines."
+  },
+  {
+    "topic": "azuredevops",
+    "question": "What is the purpose of pipeline triggers?",
+    "answers": [
+      "Automatically starting pipelines on events",
+      "Deleting old builds",
+      "Managing users",
+      "Creating dashboards"
+    ],
+    "correct": 0,
+    "explanation": "Triggers start pipelines when code changes or schedules occur."
+  },
+
+  {
+    "topic": "terraform",
+    "question": "What is a Terraform output used for?",
+    "answers": [
+      "Displaying useful information after apply",
+      "Storing logs",
+      "Managing providers",
+      "Running tests"
+    ],
+    "correct": 0,
+    "explanation": "Outputs expose values such as IP addresses after infrastructure is created."
+  },
+  {
+    "topic": "terraform",
+    "question": "What is a backend in Terraform?",
+    "answers": [
+      "Where the state file is stored",
+      "A module",
+      "A provider",
+      "A variable"
+    ],
+    "correct": 0,
+    "explanation": "Backends define where Terraform stores and locks its state file."
+  },
+  {
+    "topic": "terraform",
+    "question": "What is a Terraform module?",
+    "answers": [
+      "A reusable collection of Terraform resources",
+      "A virtual machine",
+      "A Git branch",
+      "A YAML file"
+    ],
+    "correct": 0,
+    "explanation": "Modules allow you to group and reuse Terraform configurations."
+  },
+
+  {
+    "topic": "ansible",
+    "question": "What is a template in Ansible?",
+    "answers": [
+      "A file processed with variables using Jinja2",
+      "A Python script",
+      "A module",
+      "A handler"
+    ],
+    "correct": 0,
+    "explanation": "Templates allow dynamic file generation using variables and Jinja2 syntax."
+  },
+  {
+    "topic": "ansible",
+    "question": "What is the purpose of 'become: yes'?",
+    "answers": [
+      "Runs tasks with elevated privileges",
+      "Creates a new user",
+      "Starts a service",
+      "Installs a package"
+    ],
+    "correct": 0,
+    "explanation": "'become: yes' allows Ansible to run tasks as root or another privileged user."
+  },
+  {
+    "topic": "ansible",
+    "question": "What is an Ansible fact?",
+    "answers": [
+      "Automatically collected system information",
+      "A task",
+      "A handler",
+      "A module"
+    ],
+    "correct": 0,
+    "explanation": "Facts are system details gathered by Ansible, such as OS version or IP address."
+  }
+]

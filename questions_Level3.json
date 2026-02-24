@@ -1,0 +1,371 @@
+[
+  {
+    "topic": "iac",
+    "question": "What is the main advantage of immutable infrastructure?",
+    "answers": [
+      "Servers are replaced instead of modified",
+      "Servers are manually patched",
+      "Infrastructure is updated in place",
+      "Configuration drift is expected"
+    ],
+    "correct": 0,
+    "explanation": "Immutable infrastructure replaces servers entirely when changes are needed, reducing drift and ensuring consistency."
+  },
+  {
+    "topic": "iac",
+    "question": "What is the purpose of policy-as-code in IaC environments?",
+    "answers": [
+      "To enforce compliance and governance automatically",
+      "To deploy applications",
+      "To build container images",
+      "To monitor CPU usage"
+    ],
+    "correct": 0,
+    "explanation": "Policy-as-code tools like OPA enforce rules and compliance automatically during IaC deployments."
+  },
+  {
+    "topic": "iac",
+    "question": "Why is state management critical in IaC?",
+    "answers": [
+      "It tracks the real-world infrastructure resources",
+      "It stores logs",
+      "It manages user accounts",
+      "It encrypts secrets"
+    ],
+    "correct": 0,
+    "explanation": "State files map IaC resources to actual infrastructure, enabling accurate updates and drift detection."
+  },
+
+  {
+    "topic": "git",
+    "question": "What does 'git rebase' do in advanced workflows?",
+    "answers": [
+      "Rewrites commit history onto a new base",
+      "Creates a merge commit",
+      "Deletes a branch",
+      "Pushes commits to remote"
+    ],
+    "correct": 0,
+    "explanation": "Rebase rewrites commits on top of another branch, creating a linear history."
+  },
+  {
+    "topic": "git",
+    "question": "What is the risk of using 'git push --force'?",
+    "answers": [
+      "It overwrites remote commit history",
+      "It deletes local files",
+      "It removes tags",
+      "It resets the working directory"
+    ],
+    "correct": 0,
+    "explanation": "Force pushing rewrites remote history, potentially deleting others’ work."
+  },
+  {
+    "topic": "git",
+    "question": "What does 'git cherry-pick' do?",
+    "answers": [
+      "Applies a specific commit onto another branch",
+      "Deletes a commit",
+      "Creates a new branch",
+      "Resets the repository"
+    ],
+    "correct": 0,
+    "explanation": "Cherry-pick copies a specific commit and applies it to the current branch."
+  },
+
+  {
+    "topic": "azuredevops",
+    "question": "What is the purpose of environment approvals in Azure DevOps?",
+    "answers": [
+      "To require manual or automated checks before deployment",
+      "To store logs",
+      "To run tests",
+      "To create dashboards"
+    ],
+    "correct": 0,
+    "explanation": "Approvals ensure deployments meet compliance or quality requirements before proceeding."
+  },
+  {
+    "topic": "azuredevops",
+    "question": "What is a multi-stage YAML pipeline?",
+    "answers": [
+      "A pipeline that defines build, test, and deploy stages in one YAML file",
+      "A classic pipeline",
+      "A Git branch",
+      "A variable group"
+    ],
+    "correct": 0,
+    "explanation": "Multi-stage pipelines allow full CI/CD workflows in a single YAML definition."
+  },
+  {
+    "topic": "azuredevops",
+    "question": "What is the purpose of a self-hosted agent?",
+    "answers": [
+      "Running pipelines on your own infrastructure",
+      "Running pipelines in Microsoft’s cloud",
+      "Managing Git repositories",
+      "Storing artifacts"
+    ],
+    "correct": 0,
+    "explanation": "Self-hosted agents allow custom environments, tools, and performance tuning."
+  },
+
+  {
+    "topic": "terraform",
+    "question": "What is the purpose of a Terraform workspace?",
+    "answers": [
+      "Managing multiple state files for the same configuration",
+      "Storing provider plugins",
+      "Running Terraform in parallel",
+      "Encrypting variables"
+    ],
+    "correct": 0,
+    "explanation": "Workspaces allow separate state files, useful for environments like dev, test, and prod."
+  },
+  {
+    "topic": "terraform",
+    "question": "What does a remote backend enable?",
+    "answers": [
+      "Shared state storage and locking",
+      "Local-only state",
+      "Faster apply operations",
+      "Automatic variable creation"
+    ],
+    "correct": 0,
+    "explanation": "Remote backends store state centrally and support locking to prevent conflicts."
+  },
+  {
+    "topic": "terraform",
+    "question": "What is the purpose of 'terraform taint'?",
+    "answers": [
+      "Marks a resource for forced recreation",
+      "Deletes a resource",
+      "Imports a resource",
+      "Validates configuration"
+    ],
+    "correct": 0,
+    "explanation": "Tainting forces Terraform to destroy and recreate a resource on the next apply."
+  },
+
+  {
+    "topic": "ansible",
+    "question": "What does 'delegate_to' do in Ansible?",
+    "answers": [
+      "Runs a task on a different host than the target",
+      "Creates a new inventory group",
+      "Installs a role",
+      "Overrides variable precedence"
+    ],
+    "correct": 0,
+    "explanation": "delegate_to allows tasks to run on a different host, such as localhost for API calls."
+  },
+  {
+    "topic": "ansible",
+    "question": "What is the purpose of Ansible vault?",
+    "answers": [
+      "Encrypting sensitive variables and files",
+      "Running tasks in parallel",
+      "Creating inventories",
+      "Managing roles"
+    ],
+    "correct": 0,
+    "explanation": "Vault encrypts secrets so they can be safely stored in version control."
+  },
+  {
+    "topic": "ansible",
+    "question": "What does 'serial' control in an Ansible play?",
+    "answers": [
+      "How many hosts are processed at once",
+      "The number of retries",
+      "The number of tasks",
+      "The number of handlers"
+    ],
+    "correct": 0,
+    "explanation": "Serial defines batch size, useful for rolling updates."
+  },
+
+  {
+    "topic": "iac",
+    "question": "What is drift detection?",
+    "answers": [
+      "Identifying differences between IaC state and real infrastructure",
+      "Monitoring CPU usage",
+      "Detecting network outages",
+      "Finding unused resources"
+    ],
+    "correct": 0,
+    "explanation": "Drift detection ensures infrastructure matches the IaC configuration."
+  },
+  {
+    "topic": "iac",
+    "question": "What is the purpose of CI/CD in IaC workflows?",
+    "answers": [
+      "Automating validation and deployment of infrastructure code",
+      "Monitoring logs",
+      "Managing users",
+      "Creating dashboards"
+    ],
+    "correct": 0,
+    "explanation": "CI/CD ensures IaC changes are tested and deployed consistently."
+  },
+  {
+    "topic": "iac",
+    "question": "What is the main benefit of modular IaC?",
+    "answers": [
+      "Reusability and maintainability",
+      "Faster hardware",
+      "Manual configuration",
+      "More complex deployments"
+    ],
+    "correct": 0,
+    "explanation": "Modular IaC improves structure, reuse, and maintainability."
+  },
+
+  {
+    "topic": "git",
+    "question": "What does 'git revert' do?",
+    "answers": [
+      "Creates a new commit that undoes a previous commit",
+      "Deletes a commit permanently",
+      "Resets the branch",
+      "Deletes the repository"
+    ],
+    "correct": 0,
+    "explanation": "Revert safely undoes changes by creating a new commit."
+  },
+  {
+    "topic": "git",
+    "question": "What is the purpose of a Git tag?",
+    "answers": [
+      "Marking specific commits, often for releases",
+      "Deleting branches",
+      "Storing logs",
+      "Managing remotes"
+    ],
+    "correct": 0,
+    "explanation": "Tags identify important commits such as version releases."
+  },
+  {
+    "topic": "git",
+    "question": "What does 'git stash' do?",
+    "answers": [
+      "Temporarily saves uncommitted changes",
+      "Deletes a branch",
+      "Pushes commits",
+      "Resets the repository"
+    ],
+    "correct": 0,
+    "explanation": "Stash stores changes without committing them, allowing context switching."
+  },
+
+  {
+    "topic": "azuredevops",
+    "question": "What is the purpose of a deployment job?",
+    "answers": [
+      "Deploying artifacts to environments",
+      "Running unit tests",
+      "Managing Git branches",
+      "Creating dashboards"
+    ],
+    "correct": 0,
+    "explanation": "Deployment jobs handle environment-specific deployment tasks."
+  },
+  {
+    "topic": "azuredevops",
+    "question": "What is a gated check-in?",
+    "answers": [
+      "A policy requiring code to build successfully before merging",
+      "A manual approval",
+      "A test suite",
+      "A variable group"
+    ],
+    "correct": 0,
+    "explanation": "Gated check-ins prevent broken code from entering main branches."
+  },
+  {
+    "topic": "azuredevops",
+    "question": "What is the purpose of environment secrets?",
+    "answers": [
+      "Storing sensitive values securely for pipelines",
+      "Storing logs",
+      "Managing dashboards",
+      "Running tests"
+    ],
+    "correct": 0,
+    "explanation": "Secrets store sensitive values like passwords or tokens securely."
+  },
+
+  {
+    "topic": "terraform",
+    "question": "What does 'terraform import' do?",
+    "answers": [
+      "Brings existing resources under Terraform management",
+      "Creates new resources",
+      "Deletes resources",
+      "Validates configuration"
+    ],
+    "correct": 0,
+    "explanation": "Import allows Terraform to manage resources created outside Terraform."
+  },
+  {
+    "topic": "terraform",
+    "question": "What is the purpose of 'depends_on'?",
+    "answers": [
+      "Forcing resource creation order",
+      "Storing logs",
+      "Managing providers",
+      "Running tests"
+    ],
+    "correct": 0,
+    "explanation": "depends_on ensures Terraform creates resources in a specific order."
+  },
+  {
+    "topic": "terraform",
+    "question": "What is a data source in Terraform?",
+    "answers": [
+      "A way to query existing resources",
+      "A module",
+      "A provider",
+      "A variable"
+    ],
+    "correct": 0,
+    "explanation": "Data sources fetch information about existing infrastructure."
+  },
+
+  {
+    "topic": "ansible",
+    "question": "What does 'run_once' do in Ansible?",
+    "answers": [
+      "Runs a task only on the first host",
+      "Runs a task twice",
+      "Runs a task on all hosts",
+      "Runs a task in parallel"
+    ],
+    "correct": 0,
+    "explanation": "run_once ensures a task executes only once, even in multi-host plays."
+  },
+  {
+    "topic": "ansible",
+    "question": "What is the purpose of 'with_items'?",
+    "answers": [
+      "Looping over a list of values",
+      "Creating a handler",
+      "Encrypting variables",
+      "Running tasks in parallel"
+    ],
+    "correct": 0,
+    "explanation": "with_items allows looping through lists to repeat tasks."
+  },
+  {
+    "topic": "ansible",
+    "question": "What does 'register' do in Ansible?",
+    "answers": [
+      "Stores the output of a task in a variable",
+      "Creates a new role",
+      "Starts a service",
+      "Runs a handler"
+    ],
+    "correct": 0,
+    "explanation": "register captures task output for use in later tasks."
+  }
+]

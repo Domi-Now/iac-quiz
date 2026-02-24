@@ -1,0 +1,371 @@
+[
+  {
+    "topic": "iac",
+    "question": "What is the main purpose of Infrastructure as Code (IaC)?",
+    "answers": [
+      "Automating infrastructure provisioning",
+      "Monitoring applications",
+      "Managing user accounts",
+      "Writing application code"
+    ],
+    "correct": 0,
+    "explanation": "IaC automates the creation and management of infrastructure using code instead of manual processes."
+  },
+  {
+    "topic": "iac",
+    "question": "Which IaC approach describes the desired end state?",
+    "answers": [
+      "Declarative",
+      "Imperative",
+      "Manual",
+      "Procedural"
+    ],
+    "correct": 0,
+    "explanation": "Declarative IaC defines the final desired configuration, letting the tool determine how to reach it."
+  },
+  {
+    "topic": "iac",
+    "question": "Which of the following is a key benefit of IaC?",
+    "answers": [
+      "Consistency and repeatability",
+      "More manual work",
+      "Slower deployments",
+      "Higher hardware costs"
+    ],
+    "correct": 0,
+    "explanation": "IaC ensures environments can be recreated consistently without manual configuration drift."
+  },
+
+  {
+    "topic": "git",
+    "question": "What does 'git init' do?",
+    "answers": [
+      "Creates a new Git repository",
+      "Deletes a repository",
+      "Uploads files to GitHub",
+      "Shows commit history"
+    ],
+    "correct": 0,
+    "explanation": "The 'git init' command initializes a new local Git repository in the current directory."
+  },
+  {
+    "topic": "git",
+    "question": "What is a Git commit?",
+    "answers": [
+      "A snapshot of your project",
+      "A backup of your computer",
+      "A branch deletion",
+      "A merge conflict"
+    ],
+    "correct": 0,
+    "explanation": "A commit represents a saved snapshot of your project at a specific point in time."
+  },
+  {
+    "topic": "git",
+    "question": "Which command stages a file for commit?",
+    "answers": [
+      "git add",
+      "git push",
+      "git clone",
+      "git revert"
+    ],
+    "correct": 0,
+    "explanation": "'git add' moves changes into the staging area so they can be included in the next commit."
+  },
+
+  {
+    "topic": "azuredevops",
+    "question": "What is Azure DevOps Pipelines used for?",
+    "answers": [
+      "Building and deploying applications",
+      "Managing virtual machines",
+      "Creating Azure subscriptions",
+      "Monitoring network traffic"
+    ],
+    "correct": 0,
+    "explanation": "Pipelines automate building, testing, and deploying applications."
+  },
+  {
+    "topic": "azuredevops",
+    "question": "Which Azure DevOps feature stores your source code?",
+    "answers": [
+      "Repos",
+      "Boards",
+      "Artifacts",
+      "Test Plans"
+    ],
+    "correct": 0,
+    "explanation": "Azure Repos is the version control system for storing and managing code."
+  },
+  {
+    "topic": "azuredevops",
+    "question": "What is a build pipeline?",
+    "answers": [
+      "A workflow that compiles and tests code",
+      "A tool for editing YAML files",
+      "A virtual machine",
+      "A Git repository"
+    ],
+    "correct": 0,
+    "explanation": "A build pipeline automates compiling and testing your application."
+  },
+
+  {
+    "topic": "terraform",
+    "question": "Which command initializes a Terraform project?",
+    "answers": [
+      "terraform plan",
+      "terraform init",
+      "terraform apply",
+      "terraform validate"
+    ],
+    "correct": 1,
+    "explanation": "'terraform init' downloads providers and prepares the working directory."
+  },
+  {
+    "topic": "terraform",
+    "question": "What file format does Terraform use?",
+    "answers": [
+      "HCL",
+      "XML",
+      "INI",
+      "YAML"
+    ],
+    "correct": 0,
+    "explanation": "Terraform uses HashiCorp Configuration Language (HCL) for its configuration files."
+  },
+  {
+    "topic": "terraform",
+    "question": "What does 'terraform apply' do?",
+    "answers": [
+      "Applies the planned infrastructure changes",
+      "Shows the execution plan",
+      "Initializes the project",
+      "Deletes the state file"
+    ],
+    "correct": 0,
+    "explanation": "'terraform apply' executes the changes required to reach the desired configuration."
+  },
+
+  {
+    "topic": "ansible",
+    "question": "What is an Ansible playbook?",
+    "answers": [
+      "A YAML file describing automation tasks",
+      "A Python script",
+      "A compiled binary",
+      "A Dockerfile"
+    ],
+    "correct": 0,
+    "explanation": "Playbooks define tasks and configurations in YAML format."
+  },
+  {
+    "topic": "ansible",
+    "question": "What language are Ansible playbooks written in?",
+    "answers": [
+      "YAML",
+      "JSON",
+      "XML",
+      "INI"
+    ],
+    "correct": 0,
+    "explanation": "Ansible uses YAML for its playbooks because it is human‑readable and structured."
+  },
+  {
+    "topic": "ansible",
+    "question": "What is an Ansible inventory?",
+    "answers": [
+      "A list of managed hosts",
+      "A list of tasks",
+      "A module collection",
+      "A variable file"
+    ],
+    "correct": 0,
+    "explanation": "The inventory defines which hosts Ansible will manage."
+  },
+
+  {
+    "topic": "iac",
+    "question": "Which of the following is an IaC tool?",
+    "answers": [
+      "Terraform",
+      "Excel",
+      "Outlook",
+      "Teams"
+    ],
+    "correct": 0,
+    "explanation": "Terraform is a widely used IaC tool for provisioning cloud resources."
+  },
+  {
+    "topic": "iac",
+    "question": "What problem does IaC help prevent?",
+    "answers": [
+      "Configuration drift",
+      "Faster hardware aging",
+      "Network outages",
+      "User login failures"
+    ],
+    "correct": 0,
+    "explanation": "IaC ensures environments remain consistent by avoiding manual configuration changes."
+  },
+  {
+    "topic": "iac",
+    "question": "Which file type is commonly used for IaC?",
+    "answers": [
+      "Code files",
+      "Video files",
+      "Image files",
+      "Audio files"
+    ],
+    "correct": 0,
+    "explanation": "IaC uses code files to define infrastructure declaratively or imperatively."
+  },
+
+  {
+    "topic": "git",
+    "question": "What does 'git status' show?",
+    "answers": [
+      "Changes in the working directory",
+      "Remote branches",
+      "Commit history",
+      "Tags"
+    ],
+    "correct": 0,
+    "explanation": "'git status' shows which files are modified, staged, or untracked."
+  },
+  {
+    "topic": "git",
+    "question": "What does 'git clone' do?",
+    "answers": [
+      "Copies a remote repository to your machine",
+      "Deletes a repository",
+      "Creates a new branch",
+      "Shows commit logs"
+    ],
+    "correct": 0,
+    "explanation": "'git clone' downloads a full copy of a remote repository."
+  },
+  {
+    "topic": "git",
+    "question": "What is a Git branch?",
+    "answers": [
+      "A separate line of development",
+      "A backup file",
+      "A commit message",
+      "A remote server"
+    ],
+    "correct": 0,
+    "explanation": "Branches allow parallel development without affecting the main codebase."
+  },
+
+  {
+    "topic": "azuredevops",
+    "question": "What is Azure Boards used for?",
+    "answers": [
+      "Tracking work items",
+      "Storing code",
+      "Running pipelines",
+      "Hosting artifacts"
+    ],
+    "correct": 0,
+    "explanation": "Azure Boards manages tasks, bugs, and user stories."
+  },
+  {
+    "topic": "azuredevops",
+    "question": "What is a release pipeline?",
+    "answers": [
+      "A workflow that deploys applications",
+      "A Git branch",
+      "A test suite",
+      "A storage account"
+    ],
+    "correct": 0,
+    "explanation": "Release pipelines automate deployment to environments like dev, test, and prod."
+  },
+  {
+    "topic": "azuredevops",
+    "question": "What is YAML used for in Azure DevOps?",
+    "answers": [
+      "Defining pipelines as code",
+      "Storing passwords",
+      "Creating dashboards",
+      "Managing users"
+    ],
+    "correct": 0,
+    "explanation": "YAML pipelines define CI/CD workflows in a code‑based format."
+  },
+
+  {
+    "topic": "terraform",
+    "question": "What does 'terraform plan' do?",
+    "answers": [
+      "Shows the changes Terraform will make",
+      "Applies changes",
+      "Initializes the project",
+      "Deletes resources"
+    ],
+    "correct": 0,
+    "explanation": "'terraform plan' previews the actions Terraform will take."
+  },
+  {
+    "topic": "terraform",
+    "question": "What is a Terraform provider?",
+    "answers": [
+      "A plugin that manages resources",
+      "A YAML file",
+      "A virtual machine",
+      "A Git repository"
+    ],
+    "correct": 0,
+    "explanation": "Providers allow Terraform to interact with cloud platforms like Azure or AWS."
+  },
+  {
+    "topic": "terraform",
+    "question": "What is the Terraform state file used for?",
+    "answers": [
+      "Tracking real infrastructure resources",
+      "Storing logs",
+      "Managing users",
+      "Running tests"
+    ],
+    "correct": 0,
+    "explanation": "The state file maps Terraform resources to real cloud resources."
+  },
+
+  {
+    "topic": "ansible",
+    "question": "What command runs an Ansible playbook?",
+    "answers": [
+      "ansible-playbook",
+      "ansible-run",
+      "ansible-exec",
+      "ansible-start"
+    ],
+    "correct": 0,
+    "explanation": "'ansible-playbook' executes the tasks defined in a playbook."
+  },
+  {
+    "topic": "ansible",
+    "question": "What is an Ansible module?",
+    "answers": [
+      "A reusable unit of automation",
+      "A virtual machine",
+      "A Git branch",
+      "A YAML validator"
+    ],
+    "correct": 0,
+    "explanation": "Modules perform specific automation tasks such as installing packages or managing files."
+  },
+  {
+    "topic": "ansible",
+    "question": "What does 'ansible --version' show?",
+    "answers": [
+      "The installed Ansible version",
+      "The inventory",
+      "The playbook output",
+      "The list of tasks"
+    ],
+    "correct": 0,
+    "explanation": "This command displays the installed version and configuration details."
+  }
+]

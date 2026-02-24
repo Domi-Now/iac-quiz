@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IAC Quiz Arena</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+    <h1>IaC Quiz Arena 🦁</h1>
+
+    <!-- START SCREEN -->
+    <div id="start-screen">
+        <h2>Select a Level</h2>
+
+        <button class="level-btn" onclick="startLevel(1)">
+            Start Level 1 – Beginner
+        </button>
+
+        <button class="level-btn" onclick="startLevel(2)">
+            Start Level 2 – Intermediate
+        </button>
+
+        <button class="level-btn" onclick="startLevel(3)">
+            Start Level 3 – Advanced
+        </button>
+    </div>
+
+    <!-- QUIZ SCREEN -->
+    <div id="quiz-screen" class="hidden">
+        <h2 id="level-title"></h2>
+        <div id="question"></div>
+        <div id="answers"></div>
+        <button id="next-btn" class="hidden">Next</button>
+    </div>
+
+    <!-- SCOREBOARD -->
+    <div id="score-screen" class="hidden">
+        <h2 id="score-title"></h2>
+        <p id="score-details"></p>
+        <button id="continue-btn">Continue</button>
+    </div>
+
+    <!-- FINAL SUMMARY -->
+    <div id="final-screen" class="hidden">
+        <h2>Final Results</h2>
+        <p id="final-summary"></p>
+        <button onclick="restartQuiz()">Restart Quiz</button>
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
