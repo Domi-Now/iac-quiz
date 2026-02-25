@@ -2,56 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>IAC Quiz Arena</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IaC Quiz Arena 🦁</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="app">
+    <!-- NAME INPUT SCREEN -->
+    <div id="name-screen">
+        <h2>Welcome to the IaC Quiz Arena 🦁</h2>
+        <p>Please enter your name:</p>
+        <input type="text" id="player-name-input" placeholder="Your name">
+        <button id="start-name-btn">Continue</button>
+    </div>
 
-    <h1>IaC Quiz Arena 🦁</h1>
-
-    <!-- START SCREEN -->
-    <div id="start-screen">
-        <h2>Select a Level</h2>
-
-        <button class="level-btn" onclick="startLevel(1)">
-            Start Level 1 – Beginner
-        </button>
-
-        <button class="level-btn" onclick="startLevel(2)">
-            Start Level 2 – Intermediate
-        </button>
-
-        <button class="level-btn" onclick="startLevel(3)">
-            Start Level 3 – Advanced
-        </button>
+    <!-- LEVEL SELECTION SCREEN -->
+    <div id="level-screen" style="display:none;">
+        <h2>Welcome, <span id="player-name-display"></span>!</h2>
+        <p>Select a level:</p>
+        <button onclick="startQuiz(1)">Start Level 1 – Beginner</button>
+        <button onclick="startQuiz(2)">Start Level 2 – Intermediate</button>
+        <button onclick="startQuiz(3)">Start Level 3 – Advanced</button>
     </div>
 
     <!-- QUIZ SCREEN -->
-    <div id="quiz-screen" class="hidden">
-        <h2 id="level-title"></h2>
-        <div id="question"></div>
-        <div id="answers"></div>
-        <button id="next-btn" class="hidden">Next</button>
+    <div id="quiz-screen" style="display:none;">
+        <h2 id="question-title"></h2>
+        <div id="question-container"></div>
+        <button id="next-btn" style="display:none;">Next</button>
     </div>
 
-    <!-- SCOREBOARD -->
-    <div id="score-screen" class="hidden">
-        <h2 id="score-title"></h2>
-        <p id="score-details"></p>
-        <button id="continue-btn">Continue</button>
+    <!-- RESULT SCREEN -->
+    <div id="result-screen" style="display:none;">
+        <h2 id="result-text"></h2>
+        <button onclick="goBackToLevels()">Back to Levels</button>
     </div>
 
-    <!-- FINAL SUMMARY -->
-    <div id="final-screen" class="hidden">
-        <h2>Final Results</h2>
-        <p id="final-summary"></p>
-        <button onclick="restartQuiz()">Restart Quiz</button>
-    </div>
-
-</div>
-
-<script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
