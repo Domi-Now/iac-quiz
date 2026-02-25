@@ -23,6 +23,9 @@
         <button onclick="startQuiz(1)">Start Level 1 – Beginner</button>
         <button onclick="startQuiz(2)">Start Level 2 – Intermediate</button>
         <button onclick="startQuiz(3)">Start Level 3 – Advanced</button>
+
+        <hr>
+        <button onclick="showHighscores()">View Highscores</button>
     </div>
 
     <!-- QUIZ SCREEN -->
@@ -36,6 +39,16 @@
     <div id="result-screen" style="display:none;">
         <h2 id="result-text"></h2>
         <button onclick="goBackToLevels()">Back to Levels</button>
+        <button onclick="showHighscores()">View Highscores</button>
+    </div>
+
+    <!-- HIGHSCORE SCREEN -->
+    <div id="highscore-screen" style="display:none;">
+        <h2>Highscores</h2>
+        <ul id="highscore-list"></ul>
+
+        <button onclick="goBackToLevels()">Back to Levels</button>
+        <button onclick="clearHighscores()">Clear Highscores</button>
     </div>
 
     <script src="app.js"></script>
