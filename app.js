@@ -147,4 +147,4 @@ function saveHighscore(score) {
 function goBackToLevels() {
     document.getElementById("result-screen").style.display = "none";
     document.getElementById("level-screen").style.display = "block";
-}
+}g
