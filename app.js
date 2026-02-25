@@ -1,125 +1,150 @@
-let currentLevel = 1;
 let questions = [];
-let currentSet = [];
-let currentIndex = 0;
+let currentQuestionIndex = 0;
 let score = 0;
+let playerName = "";
 
-let levelScores = {
-    1: 0,
-    2: 0,
-    3: 0
-};
+// -------------------------
+// NAME INPUT LOGIC
+// -------------------------
+document.addEventListener("DOMContentLoaded", () => {
+    const nameScreen = document.getElementById("name-screen");
+    const levelScreen = document.getElementById("level-screen");
+    const nameInput = document.getElementById("player-name-input");
+    const startNameBtn = document.getElementById("start-name-btn");
+    const nameDisplay = document.getElementById("player-name-display");
 
-async function startLevel(level) {
-    currentLevel = level;
+    const savedName = localStorage.getItem("playerName");
 
-    document.getElementById("start-screen").classList.add("hidden");
-    document.getElementById("score-screen").classList.add("hidden");
-    document.getElementById("final-screen").classList.add("hidden");
+    if (savedName) {
+        playerName = savedName;
+        nameDisplay.textContent = savedName;
+        nameScreen.style.display = "none";
+        levelScreen.style.display = "block";
+    }
 
-    document.getElementById("quiz-screen").classList.remove("hidden");
-    document.getElementById("level-title").innerText = `Level ${level}`;
+    startNameBtn.addEventListener("click", () => {
+        const name = nameInput.value.trim();
 
-    await loadQuestions(level);
-    startQuiz();
-}
+        if (name.length < 2) {
+            alert("Please enter a valid name.");
+            return;
+        }
 
-async function loadQuestions(level) {
-    const res = await fetch(`questions_level${level}.json`);
-    questions = await res.json();
-}
+        localStorage.setItem("playerName", name);
+        playerName = name;
 
-function startQuiz() {
-    currentSet = questions.sort(() => 0.5 - Math.random()).slice(0, 10);
-    currentIndex = 0;
-    score = 0;
-
-    showQuestion();
-}
-
-function showQuestion() {
-    const q = currentSet[currentIndex];
-    document.getElementById("question").innerText = q.question;
-
-    const answersDiv = document.getElementById("answers");
-    answersDiv.innerHTML = "";
-
-    const oldExp = document.getElementById("explanation");
-    if (oldExp) oldExp.remove();
-
-    q.answers.forEach((ans, i) => {
-        const btn = document.createElement("button");
-        btn.innerText = ans;
-        btn.onclick = () => checkAnswer(i);
-        answersDiv.appendChild(btn);
+        nameDisplay.textContent = name;
+        nameScreen.style.display = "none";
+        levelScreen.style.display = "block";
     });
+});
+
+// -------------------------
+// QUIZ START
+// -------------------------
+function startQuiz(level) {
+    document.getElementById("level-screen").style.display = "none";
+    document.getElementById("quiz-screen").style.display = "block";
+
+    fetch(`questions_level${level}.json`)
+        .then(response => response.json())
+        .then(data => {
+            questions = data;
+            currentQuestionIndex = 0;
+            score = 0;
+            showQuestion();
+        });
 }
 
-function checkAnswer(i) {
-    const q = currentSet[currentIndex];
+// -------------------------
+// SHOW QUESTION
+// -------------------------
+function showQuestion() {
+    const question = questions[currentQuestionIndex];
 
-    if (i === q.correct) score++;
+    document.getElementById("question-title").textContent =
+        `Question ${currentQuestionIndex + 1} of ${questions.length}`;
 
-    const exp = document.createElement("div");
-    exp.id = "explanation";
-    exp.innerText = `Explanation: ${q.explanation}`;
-    document.getElementById("quiz-screen").appendChild(exp);
+    const container = document.getElementById("question-container");
+    container.innerHTML = "";
 
-    document.getElementById("next-btn").classList.remove("hidden");
+    question.answers.forEach((answer, index) => {
+        const btn = document.createElement("button");
+        btn.textContent = answer;
+        btn.onclick = () => selectAnswer(index, question.correct);
+        container.appendChild(btn);
+    });
+
+    document.getElementById("next-btn").style.display = "none";
 }
 
-document.getElementById("next-btn").onclick = () => {
-    currentIndex++;
-    document.getElementById("next-btn").classList.add("hidden");
+// -------------------------
+// ANSWER SELECTION
+// -------------------------
+function selectAnswer(selectedIndex, correctIndex) {
+    const buttons = document.querySelectorAll("#question-container button");
 
-    const oldExp = document.getElementById("explanation");
-    if (oldExp) oldExp.remove();
+    buttons.forEach((btn, index) => {
+        if (index === correctIndex) btn.classList.add("correct");
+        if (index === selectedIndex && selectedIndex !== correctIndex)
+            btn.classList.add("wrong");
 
-    if (currentIndex < currentSet.length) {
+        btn.disabled = true;
+    });
+
+    if (selectedIndex === correctIndex) score++;
+
+    document.getElementById("next-btn").style.display = "block";
+    document.getElementById("next-btn").onclick = nextQuestion;
+}
+
+// -------------------------
+// NEXT QUESTION
+// -------------------------
+function nextQuestion() {
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex < questions.length) {
         showQuestion();
     } else {
-        endLevel();
+        endQuiz();
     }
-};
-
-function endLevel() {
-    levelScores[currentLevel] = score;
-
-    document.getElementById("quiz-screen").classList.add("hidden");
-    document.getElementById("score-screen").classList.remove("hidden");
-
-    const accuracy = Math.round((score / 10) * 100);
-
-    document.getElementById("score-title").innerText =
-        `Level ${currentLevel} completed!`;
-
-    document.getElementById("score-details").innerText =
-        `Correct answers: ${score}/10\nAccuracy: ${accuracy}%`;
-
-    document.getElementById("continue-btn").onclick = () => {
-        if (currentLevel < 3) {
-            startLevel(currentLevel + 1);
-        } else {
-            showFinalResults();
-        }
-    };
 }
 
-function showFinalResults() {
-    document.getElementById("score-screen").classList.add("hidden");
-    document.getElementById("final-screen").classList.remove("hidden");
+// -------------------------
+// END QUIZ
+// -------------------------
+function endQuiz() {
+    document.getElementById("quiz-screen").style.display = "none";
+    document.getElementById("result-screen").style.display = "block";
 
-    const total = levelScores[1] + levelScores[2] + levelScores[3];
+    document.getElementById("result-text").textContent =
+        `${playerName}, your score is ${score} out of ${questions.length}.`;
 
-    document.getElementById("final-summary").innerText =
-        `Level 1: ${levelScores[1]}/10
-Level 2: ${levelScores[2]}/10
-Level 3: ${levelScores[3]}/10
-
-Total: ${total}/30`;
+    saveHighscore(score);
 }
 
-function restartQuiz() {
-    document.getElementById("final-screen").classList.add("hidden");
-    document.getElementById("start-screen").classList.remove("hidden");
+// -------------------------
+// SAVE HIGHSCORE
+// -------------------------
+function saveHighscore(score) {
+    let highscores = JSON.parse(localStorage.getItem("highscores")) || [];
+
+    highscores.push({
+        name: playerName,
+        score: score,
+        date: new Date().toLocaleString()
+    });
+
+    highscores.sort((a, b) => b.score - a.score);
+
+    localStorage.setItem("highscores", JSON.stringify(highscores));
+}
+
+// -------------------------
+// BACK TO LEVELS
+// -------------------------
+function goBackToLevels() {
+    document.getElementById("result-screen").style.display = "none";
+    document.getElementById("level-screen").style.display = "block";
 }
