@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // QUIZ START
 // -------------------------
 function startQuiz(level) {
-    document.getElementById("level-screen").style.display = "none";
+    hideAllScreens();
     document.getElementById("quiz-screen").style.display = "block";
 
     fetch(`questions_level${level}.json`)
@@ -115,7 +115,7 @@ function nextQuestion() {
 // END QUIZ
 // -------------------------
 function endQuiz() {
-    document.getElementById("quiz-screen").style.display = "none";
+    hideAllScreens();
     document.getElementById("result-screen").style.display = "block";
 
     document.getElementById("result-text").textContent =
@@ -142,9 +142,46 @@ function saveHighscore(score) {
 }
 
 // -------------------------
-// BACK TO LEVELS
+// SHOW HIGHSCORES
 // -------------------------
-function goBackToLevels() {
+function showHighscores() {
+    hideAllScreens();
+    document.getElementById("highscore-screen").style.display = "block";
+
+    const list = document.getElementById("highscore-list");
+    list.innerHTML = "";
+
+    const highscores = JSON.parse(localStorage.getItem("highscores")) || [];
+
+    highscores.forEach((entry, index) => {
+        const li = document.createElement("li");
+        li.textContent = `${index + 1}. ${entry.name} – ${entry.score}`;
+        list.appendChild(li);
+    });
+}
+
+// -------------------------
+// CLEAR HIGHSCORES
+// -------------------------
+function clearHighscores() {
+    if (confirm("Are you sure you want to clear all highscores?")) {
+        localStorage.removeItem("highscores");
+        showHighscores();
+    }
+}
+
+// -------------------------
+// NAVIGATION HELPERS
+// -------------------------
+function hideAllScreens() {
+    document.getElementById("name-screen").style.display = "none";
+    document.getElementById("level-screen").style.display = "none";
+    document.getElementById("quiz-screen").style.display = "none";
     document.getElementById("result-screen").style.display = "none";
+    document.getElementById("highscore-screen").style.display = "none";
+}
+
+function goBackToLevels() {
+    hideAllScreens();
     document.getElementById("level-screen").style.display = "block";
-}g
+}
