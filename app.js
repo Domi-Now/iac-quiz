@@ -1,4 +1,5 @@
-let questions = [];
+// version 3
+// let questions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 let playerName = "";
