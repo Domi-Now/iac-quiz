@@ -1,8 +1,19 @@
-// version 3
+// version 4
 let questions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 let playerName = "";
+
+// -------------------------
+// SHUFFLE FUNCTION
+// -------------------------
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
 
 // -------------------------
 // NAME INPUT LOGIC
@@ -51,7 +62,6 @@ function startQuiz(level) {
         .then(response => response.json())
         .then(data => {
             questions = data;
-            console.log("Loaded questions:", questions);
             currentQuestionIndex = 0;
             score = 0;
             showQuestion();
@@ -67,13 +77,22 @@ function showQuestion() {
     document.getElementById("question-title").textContent =
         `Question ${currentQuestionIndex + 1} of ${questions.length}`;
     document.getElementById("question-text").textContent = question.question;
+
     const container = document.getElementById("question-container");
     container.innerHTML = "";
 
-    question.answers.forEach((answer, index) => {
+    // Shuffle answers while keeping track of the correct one
+    const answers = question.answers.map((answer, index) => ({
+        text: answer,
+        index: index
+    }));
+
+    const shuffled = shuffleArray(answers);
+
+    shuffled.forEach(answerObj => {
         const btn = document.createElement("button");
-        btn.textContent = answer;
-        btn.onclick = () => selectAnswer(index, question.correct);
+        btn.textContent = answerObj.text;
+        btn.onclick = () => selectAnswer(answerObj.index, question.correct);
         container.appendChild(btn);
     });
 
@@ -87,8 +106,10 @@ function selectAnswer(selectedIndex, correctIndex) {
     const buttons = document.querySelectorAll("#question-container button");
 
     buttons.forEach((btn, index) => {
-        if (index === correctIndex) btn.classList.add("correct");
-        if (index === selectedIndex && selectedIndex !== correctIndex)
+        const originalAnswerIndex = questions[currentQuestionIndex].answers.indexOf(btn.textContent);
+
+        if (originalAnswerIndex === correctIndex) btn.classList.add("correct");
+        if (originalAnswerIndex === selectedIndex && selectedIndex !== correctIndex)
             btn.classList.add("wrong");
 
         btn.disabled = true;
