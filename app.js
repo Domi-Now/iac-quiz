@@ -56,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // -------------------------
 function startQuiz(level) {
     hideAllScreens();
+    document.getElementById("intro-screen").style.display = "none";
     document.getElementById("quiz-screen").style.display = "block";
 
     fetch(`questions_level${level}.json`)
@@ -212,5 +213,6 @@ function hideAllScreens() {
 
 function goBackToLevels() {
     hideAllScreens();
+    document.getElementById("intro-screen").style.display = "block";
     document.getElementById("level-screen").style.display = "block";
 }
