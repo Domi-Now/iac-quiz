@@ -8,15 +8,14 @@
 </head>
 <body>
 
-    <!-- MAIN TITLE -->
-     <div id="intro-screen">
+    <!-- INTRO SCREEN (only visible before game starts) -->
+    <div id="intro-screen">
         <h1>IaC Quiz Arena</h1>
         <h2>Sharpen your skills and take your IaC expertise to the next level!</h2>
 
-        <!-- DESCRIPTION -->
         <p style="max-width: 700px; margin: 0 auto 30px auto; font-size: 18px;">
-         Whether it’s IaC fundamentals, Git commands, Azure DevOps workflows, or provisioning with Terraform and Ansible — 
-         each question brings you one step closer to becoming as strong and confident as a lion in the cloud jungle.
+            Whether it’s IaC fundamentals, Git commands, Azure DevOps workflows, or provisioning with Terraform and Ansible —
+            each question helps you strengthen your automation knowledge and build confidence in cloud engineering.
         </p>
     </div>
 
@@ -31,6 +30,7 @@
     <div id="level-screen" style="display:none;">
         <h2>Welcome, <span id="player-name-display"></span>!</h2>
         <p>Select a level:</p>
+
         <button onclick="startQuiz(1)">Level 1 – Beginner</button>
         <button onclick="startQuiz(2)">Level 2 – Intermediate</button>
         <button onclick="startQuiz(3)">Level 3 – Advanced</button>
@@ -43,7 +43,12 @@
     <div id="quiz-screen" style="display:none;">
         <h2 id="question-title"></h2>
         <p id="question-text"></p>
+
         <div id="question-container"></div>
+
+        <!-- EXPLANATION BOX (hidden until answer is clicked) -->
+        <p id="explanation-box" style="display:none; margin-top:20px; font-size:16px;"></p>
+
         <button id="next-btn" style="display:none;">Next</button>
     </div>
 

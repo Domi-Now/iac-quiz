@@ -1,4 +1,4 @@
-// version 4
+// version 5
 let questions = [];
 let currentQuestionIndex = 0;
 let score = 0;
@@ -82,11 +82,17 @@ function showQuestion() {
     const question = questions[currentQuestionIndex];
 
     document.getElementById("question-title").textContent =
-        `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+        `Question ${currentQuestionIndex + 1} of 12`;
+
     document.getElementById("question-text").textContent = question.question;
 
     const container = document.getElementById("question-container");
     container.innerHTML = "";
+
+    // Reset explanation box
+    const explanationBox = document.getElementById("explanation-box");
+    explanationBox.style.display = "none";
+    explanationBox.textContent = "";
 
     // Shuffle answers while keeping track of the correct one
     const answers = question.answers.map((answer, index) => ({
@@ -112,8 +118,9 @@ function showQuestion() {
 function selectAnswer(selectedIndex, correctIndex) {
     const buttons = document.querySelectorAll("#question-container button");
 
-    buttons.forEach((btn, index) => {
-        const originalAnswerIndex = questions[currentQuestionIndex].answers.indexOf(btn.textContent);
+    buttons.forEach(btn => {
+        const originalAnswerIndex =
+            questions[currentQuestionIndex].answers.indexOf(btn.textContent);
 
         if (originalAnswerIndex === correctIndex) btn.classList.add("correct");
         if (originalAnswerIndex === selectedIndex && selectedIndex !== correctIndex)
@@ -123,6 +130,11 @@ function selectAnswer(selectedIndex, correctIndex) {
     });
 
     if (selectedIndex === correctIndex) score++;
+
+    // Show explanation
+    const explanationBox = document.getElementById("explanation-box");
+    explanationBox.style.display = "block";
+    explanationBox.textContent = questions[currentQuestionIndex].explanation;
 
     document.getElementById("next-btn").style.display = "block";
     document.getElementById("next-btn").onclick = nextQuestion;
