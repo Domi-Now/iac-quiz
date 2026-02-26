@@ -1,4 +1,4 @@
-// version 5
+// version 6
 let questions = [];
 let currentQuestionIndex = 0;
 let score = 0;
@@ -63,10 +63,7 @@ function startQuiz(level) {
         .then(response => response.json())
         .then(data => {
 
-            // Shuffle all questions
             const shuffled = shuffleArray(data);
-
-            // Take only the first 12
             questions = shuffled.slice(0, 12);
 
             currentQuestionIndex = 0;
@@ -89,12 +86,10 @@ function showQuestion() {
     const container = document.getElementById("question-container");
     container.innerHTML = "";
 
-    // Reset explanation box
     const explanationBox = document.getElementById("explanation-box");
     explanationBox.style.display = "none";
     explanationBox.textContent = "";
 
-    // Shuffle answers while keeping track of the correct one
     const answers = question.answers.map((answer, index) => ({
         text: answer,
         index: index
@@ -131,7 +126,6 @@ function selectAnswer(selectedIndex, correctIndex) {
 
     if (selectedIndex === correctIndex) score++;
 
-    // Show explanation
     const explanationBox = document.getElementById("explanation-box");
     explanationBox.style.display = "block";
     explanationBox.textContent = questions[currentQuestionIndex].explanation;
@@ -216,6 +210,7 @@ function clearHighscores() {
 // NAVIGATION HELPERS
 // -------------------------
 function hideAllScreens() {
+    document.getElementById("intro-screen").style.display = "none";
     document.getElementById("name-screen").style.display = "none";
     document.getElementById("level-screen").style.display = "none";
     document.getElementById("quiz-screen").style.display = "none";
