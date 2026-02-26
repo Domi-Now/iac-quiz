@@ -51,6 +51,7 @@ function startQuiz(level) {
         .then(response => response.json())
         .then(data => {
             questions = data;
+            console.log("Loaded questions:", questions);
             currentQuestionIndex = 0;
             score = 0;
             showQuestion();
