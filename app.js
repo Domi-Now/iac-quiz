@@ -66,7 +66,7 @@ function showQuestion() {
 
     document.getElementById("question-title").textContent =
         `Question ${currentQuestionIndex + 1} of ${questions.length}`;
-
+    document.getElementById("question-text").textContent = question.question;
     const container = document.getElementById("question-container");
     container.innerHTML = "";
 
