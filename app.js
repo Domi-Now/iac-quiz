@@ -61,7 +61,13 @@ function startQuiz(level) {
     fetch(`questions_level${level}.json`)
         .then(response => response.json())
         .then(data => {
-            questions = data;
+
+            // Shuffle all questions
+            const shuffled = shuffleArray(data);
+
+            // Take only the first 12
+            questions = shuffled.slice(0, 12);
+
             currentQuestionIndex = 0;
             score = 0;
             showQuestion();
